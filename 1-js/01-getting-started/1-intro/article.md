@@ -1,122 +1,122 @@
-# An Introduction to JavaScript
+# Uvod u JavaScript
 
-Let's see what's so special about JavaScript, what we can achieve with it, and what other technologies play well with it.
+Idemo vidjeti što je tako posebno oko JavaScripta, što njime možemo postići i koje druge tehnologije dobro rade s njim.
 
-## What is JavaScript?
+## Što je JavaScript?
 
-*JavaScript* was initially created to "make web pages alive".
+*JavaScript* je isprva napravljen kako bi "napravio web-stranice živima".
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+Programi u ovom jeziku nazivaju se *skriptama*. One mogu biti napisane izravno u HTML-u web-stranice i pokrenute automatski pri učitavanju stranice.
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+Skripte su pružene i izvršene kao običan tekst. Ne trebaju posebnu pripremu niti kompilaciju da bi se pokrenule.
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
+U tom pogledu, JavaScript je vrlo različit od jednog drugog jezika zvanog [Java](https://hr.wikipedia.org/wiki/Java_(programski_jezik))).
 
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+```smart header="Zašto se zove <u>Java</u>Script?"
+Kada je JavaScript tek stvoren imao je drugo ime: "LiveScript". Međutim, u to je vrijeme Java bila vrlo popularna pa je odlučeno da bi bilo od pomoći postaviti taj novi jezik kao "mlađeg brata" Jave.
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+No, kako je evoluirao, JavaScript je postao sasvim neovisan jezik vlastite specifikacije zvane [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript) pa sad više nema nikakvog odnosa s Javom.
 ```
 
-Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
+Danas, JavaScript nema mogućnost izvođenja samo u web pregledniku (eng. *browser*), već i na poslužitelju (eng. *server*), odnosno na bilokojem uređaju koji ima poseban program imena [JavaScript pokretač](https://en.wikipedia.org/wiki/JavaScript_engine) (eng. *JavaScript engine*).
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+Web preglednik ima ugrađeni pokretač koji se ponekad naziva "JavaScript virtualnim strojem" (eng. *JavaScript virtual machine*).
 
-Different engines have different "codenames". For example:
+Različiti pokretači imaju različita "kodna imena". Na primjer:
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- Chrome i Opera.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefox.
+- ...Postoje i druga kodna imena poput "Chakra" za IE, "JavaScriptCore", "Nitro" i "SquirrelFish" za Safari, itd.
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome and Opera.
+Gornji pojmovi dobri su za zapamtiti jer se koriste u developerskim člancima na internetu, a korisit će se i ovdje. Na primjer, ako "V8 podržava značajku X", onda najvjerojatnije radi u Chromeu i Operi.
 
-```smart header="How do engines work?"
+```smart header="Kako rade pokretači?"
+Pokretači su komplicirani, ali osnove su jednostavne.
 
-Engines are complicated. But the basics are easy.
+1. Pokretač (ugrađen ako je web preglednik) čita ("parsira") skriptu.
+2. Zatim pretvara ("kompajlira") skriptu u strojni jezik.
+3. Onda se strojni kod izvršava, i to prilično brzo.
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to the machine language.
-3. And then the machine code runs, pretty fast.
-
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
+Pokretač primjenjuje optimizacije u svakom koraku procesa. On čak i gleda kompajliranu skriptu dok se izvršava, analizira podatke koji kroz nju prolaze pa još više optimizira strojni kod na temelju toga.
 ```
 
-## What can in-browser JavaScript do?
+## Što sve može JavaScript u web pregledniku?
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+Moderni JavaScript je "siguran" programski jezik. Ne pruža pristup memoriji ili CPU jer je originalno napravljen za preglednike kojima to nije bilo potrebno.
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScriptove mogućnosti uvelike ovise o okolini u kojoj se izvršava. Na primjer, [Node.js](https://wikipedia.org/wiki/Node.js) podržava funkcije koje dopuštaju JavaScriptu da čita/piše proizvoljne datoteke, izvršava mrežne zahtjeve, itd.
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+JavaScript u web pregledniku može raditi sve vezano uz manipulaciju web stranicama, interakciju s korisnikom, i web poslužitelja.
 
-For instance, in-browser JavaScript is able to:
+Na primjer, JavaScript u web pregledniku može:
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- Dodati novi HTML na stranicu, mijenjati postojeći sadržaj, mijenjati stilove,
+- Reagirati na korisnikove akcije, pokretati se na pritisak miša, micanje pokazivača i pritisak znakova tipkovnice,
+- Slati zahtjeve preko mreže na udaljene (eng. *remote*) poslužitelje, preuzimati i učitavati datoteke (takozvane [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) i [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) tehnologije),
+- Dohvaćati i postavljati kolačiće, postavljati pitanja posjetitelju, prikazivati poruke, te
+- Pamtiti podatke na klijentskoj strani ("local storage").
 
-## What CAN'T in-browser JavaScript do?
+## Što JavaScript u web pregledniku NE može?
 
-JavaScript's abilities in the browser are limited for the sake of the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+JavaScriptove sposobnosti u web pregledniku ograničene su za sigurnost korisnika. Cilj je zloj stranici spriječiti pristup privatnim podacima ili mogućnost oštećivanja korisnikovih podataka.
 
-Examples of such restrictions include:
+Primjeri takvih ograničenja uključuju:
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+- JavaScript na web-stranici ne smije čitati/pisati proizvoljne datoteke na tvrdi disk, kopirati ih ili izvoditi programe. Nema izravan pristup funkcijama operacijskog sustava.
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Moderni preglednici dopuštaju mu rad s datotekama, ali pristup je ograničen i dopušten samo ako korisnik, na primjer, "ubaci" datoteku u prozor preglednika ili ju označi kroz `<input>` oznaku.
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    Postoje načini za interakciju s kamerom/mikrofonom i drugim uređajima, ali oni zahtijevaju korisnikovo eksplicitno dopuštenje. Dakle, stranica s omogućenim JavaScriptom ne smije i ne može potajice uključiti web kameru, proučavati okolinu i slati informacije [SOA-i](https://hr.wikipedia.org/wiki/Sigurnosno-obavje%C5%A1tajna_agencija).
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
+- Različiti tabovi/prozori uglavnom ne znaju jedan za drugog. Ponekad znaju, npr. kada jedan prozor koristi JavaScript kako bi otvorio drugi. Međutim, čak i tada, JavaScript jedne stranice ne smije pristupiti drugoj ako dolaze s drugačijih mjesta (eng. *site*) (druga domena, protokol, port).
 
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Ovo se zove "Same Origin Policy" (politika istog izvora). Kako bi se to zaobišlo, *obje stranice* moraju pristati na razmjenu podataka i sadržavati poseban JavaScript kod koji time rukuje (eng. *handle*). Pokrit ćemo to u ovom tutorialu.
+
+    Ovo ograničenje je, opet, za sigurnost korisnika. Stranica s `https://bilosto.hr` koju je korisnik otvorio ne smije moći pristupiti drugom tabu preglednika URL-a `https://mail.google.com` i krasti informacije odandje.
+- JavaScript može jednostavno komunicirati preko mreže s poslužiteljem s kojeg je trenutna stranica došla, ali mu je sposobnost primanja podataka od drugih stranica/domena osakaćena. Iako je moguće, zahtijeva eksplicitni pristanak (izražen preko HTTP zaglavlja (eng. *headers*)) udaljene strane komunikacije. I opet, to je sigurnosno ograničenje.
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+Takva ograničenja ne postoje kada se JavaScript koristi izvan preglednika, na primjer na poslužitelju. Moderni preglednici također dopuštaju pluginove/ekstenzije koje mogu tražiti proširena dopuštenja.
 
-## What makes JavaScript unique?
+## Što JavaScript čini jedinstvenim?
 
-There are at least *three* great things about JavaScript:
+Postoje barem *tri* odlične stvari oko JavaScripta:
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Support by all major browsers and enabled by default.
++ Potpuna integracija s HTML-om i CSS-om.
++ Jednostavne stvari rade se jednostavno.
++ Svi veliki preglednici podržavaju ga pod zadano.
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript je jedina tehnologija web preglednika koja kombinira ove tri stvari.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+I to čini JavaScript jedinstvenim; zbog toga je najrašireniji alat za stvaranje web sučelja.
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+Međutim, JavaScript također podržava stvaranje poslužitelja, mobilnih aplikacija, itd.
 
-## Languages "over" JavaScript
+## Jezici "preko" JavaScripta
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+Sintaksa JavaScripta ne pristaje svačijim potrebama. Različiti ljudi žele različite značajke.
 
-That's to be expected, because projects and requirements are different for everyone.
+To je i očekivano jer su projekti i zahtjevi različiti za svakoga.
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Tako se nedavno pojavilo obilje novih jezika koji se *transpajliraju* (eng. *transpile*) (pretvaraju) u JavaScript prije nego se pokrenu u pregledniku.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Moderni alati čine transpilaciju vrlo brzom i transparentnom pa tako čak i dopuštaju developerima kodiranje u drugom jeziku, koji automatski "ispod haube" pretvaraju u JavaScript.
 
-Examples of such languages:
+Primjeri takvih jezika:
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
-- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
+- [CoffeeScript](http://coffeescript.org/) je "sintaktički šećer" za JavaScript, a uvodi kraću sintaksu kojom omogućava pisanje čišćeg i preciznijeg koda. Obično ga vole developeri Rubyja.
+- [TypeScript](http://www.typescriptlang.org/) se koncentrira na dodavanje "strogog tipiziranja podatka" za pojednostavljenje razvoja i podršku kompleksnih sustava. Razvija ga Microsoft.
+- [Flow](http://flow.org/) također dodaje tipiziranje podataka, ali na drugačiji način. Razvija ga Facebook.
+- [Dart](https://www.dartlang.org/) je samostalan jezik koji ima vlastiti pokretač koji se vrti u okolinama van preglednika (poput mobilnih aplikacija), ali također može biti transpajliran u JavaScript.
+- [Brython](https://brython.info/) je Python-u-JavaScript transpajler koji omogućuje pisanje aplikacija u čistom Pythonu.
+- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) je moderan, koncizan i siguran programski jezik koji može ciljati preglednik ili Node.
 
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+Postoji ih još. Naravno, čak i ako koristimo jedan od transpajlanih jezika trebamo znati JavaScript kako bismo zaista shvaćali što radimo.
 
-## Summary
+## Sažetak
 
-- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration in HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript originalno stvoren kao jezik samo za web preglednike, ali sada se također koristi u raznim drugim okolinama.
+- JavaScript danas ima posebnu poziciju kao najraširenije usvojen jezik web preglednika s potpunom integracijom s HTML-om i CSS-om.
+- Postoje mnogi jezici koji se mogu transpajlirati u JavaScript i pružaju određene značajke. Preporučljivo je barem ih malo pogledati nakon svladavanja JavaScripta.
