@@ -1,37 +1,37 @@
 
-# Manuals and specifications
+# Priručnici i specifikacije
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other sources.
+Ova knjiga je *tutorial*. Njezin cilj je pomoći ti postupno naučiti jezik, ali jednom kada svladaš osnove trebat ćeš druge izvore.
 
-## Specification
+## Specifikacija
 
-[The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
+[ECMA-262 specifikacija](https://www.ecma-international.org/publications/standards/Ecma-262.htm) sadrži najdetaljnije, formalizirane informacije o JavaScriptu koje idu najviše u dubinu. Ona definira taj jezik.
 
-But being that formalized, it's difficult to understand at first. So if you need the most trustworthy source of information about the language details, the specification is the right place. But it's not for everyday use.
+Međutim, budući da je tako formalizirana, isprva je teška za shvatiti. No ako trebaš najpouzdaniji izvor informacija o detaljima jezika, ta specifikacija je pravi izbor, samo nije najprikladnija za svakodnevno korištenje. 
 
-A new specification version is released every year. In-between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+Nova verzija specifikacije izdaje se svake godine. Između tih izdanja, skica najnovije specifikacije nalazi se na <https://tc39.es/ecma262/>.
 
-To read about new bleeding-edge features, including those that are "almost standard" (so-called "stage 3"), see proposals at <https://github.com/tc39/proposals>.
+Ako želiš čitati o najnovijim značajkama "krvarećeg ruba" (eng. *bleeding edge*), uključujući onim koje su "skoro pa standard" (tzv. "stadij 3"), pogledaj prijedloge na <https://github.com/tc39/proposals>.
 
-Also, if you're developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
+Također, ako razvijaš za web preglednik, postoje i druge specifikacije koje su pokrivene u [drugom dijelu](info:browser-environment) tutoriala.
 
-## Manuals
+## Priručnici
 
-- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference** je glavni priručnik s primjerima i drugim informacijama. Odličan je za pronaći detaljne informacije o pojedinim funkcijama, metodama, i sl. koje se nalaze u jeziku.
 
-    One can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+    Može se naći na <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
 
-Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for `parseInt` function.
+Doduše, često je najbolje koristiti neku web tražilicu. Samo se u upitu iskoristi format "MDN [pojam]", npr. <https://google.com/search?q=MDN+parseInt> kako bi se potražila `parseInt` funkcija.
 
-## Compatibility tables
+## Tablice usklađenosti
 
-JavaScript is a developing language, new features get added regularly.
+JavaScript je jezik u razvoju, dakle učestalo dobiva nove značajke.
 
-To see their support among browser-based and other engines, see:
+Kako bi se vidjela podrška za njih kroz pokretače bilo u pregledniku ili van njega, postoje:
 
-- <http://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
-- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+- <http://caniuse.com> - tablica podrške po svakoj značajki, npr. pregled podrške za moderne kriptografske funkcije: <http://caniuse.com/#feat=cryptography> i
+- <https://kangax.github.io/compat-table> - tablica sa značajkama jezika i pokretačima koji ih ili podržavaju ili ne.
 
-All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
+Svi su ovi izvori korisni u stvarnom razvoju aplikacija jer sadrže vrijedne informacije o detaljima jezika, podršci značajki, itd.
 
-Please remember them (or this page) for the cases when you need in-depth information about a particular feature.
+Bilo bi dobro zapamtiti ih (ili ovu stranicu) za slučajeve kada se javi potreba za detaljima o nekoj značajci.
