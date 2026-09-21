@@ -265,7 +265,7 @@ function showMessage(from, text) {
 
 ### Alternative default parameters
 
-Sometimes it makes sense to assign default values for parameters not in the function declaration, but at a later stage.
+Sometimes it makes sense to assign default values for parameters at a later stage after the function declaration.
 
 We can check if the parameter is passed during the function execution, by comparing it with `undefined`:
 
@@ -460,7 +460,7 @@ These examples assume common meanings of prefixes. You and your team are free to
 ```smart header="Ultrashort function names"
 Functions that are used *very often* sometimes have ultrashort names.
 
-For example, the [jQuery](http://jquery.com) framework defines a function with `$`. The [Lodash](http://lodash.com/) library has its core function named `_`.
+For example, the [jQuery](https://jquery.com/) framework defines a function with `$`. The [Lodash](https://lodash.com/) library has its core function named `_`.
 
 These are exceptions. Generally function names should be concise and descriptive.
 ```
